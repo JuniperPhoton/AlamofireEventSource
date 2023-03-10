@@ -2,6 +2,8 @@
 
 Alamofire plugin for Server-Sent Events (SSE).
 
+> This repo is forked from `https://github.com/dclelland/AlamofireEventSource` and fixes the delimiter issue.
+
 ## Usage
 
 ```swift
