@@ -82,7 +82,9 @@ extension DataStreamRequest {
         
     }
 
-    @discardableResult public func responseDecodableEventSource<T: Decodable>(using serializer: DecodableEventSourceSerializer<T> = DecodableEventSourceSerializer(), on queue: DispatchQueue = .main, handler: @escaping (DecodableEventSource<T>) -> Void) -> DataStreamRequest {
+    @discardableResult public func responseDecodableEventSource<T: Decodable>(using serializer: DecodableEventSourceSerializer<T> = DecodableEventSourceSerializer(),
+                                                                              on queue: DispatchQueue = .main,
+                                                                              handler: @escaping (DecodableEventSource<T>) -> Void) -> DataStreamRequest {
         return responseStream(using: serializer, on: queue) { stream in
             switch stream.event {
             case .stream(let result):
@@ -94,5 +96,4 @@ extension DataStreamRequest {
             }
         }
     }
-    
 }

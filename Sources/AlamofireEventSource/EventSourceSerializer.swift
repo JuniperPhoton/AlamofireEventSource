@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 public class EventSourceSerializer: DataStreamSerializer {
-    
     public static let doubleNewlineDelimiter = "\n\n".data(using: .utf8)!
+    public static let doneDelimiter = "[done]"
     
     public let delimiter: Data
     
